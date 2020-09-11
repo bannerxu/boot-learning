@@ -30,7 +30,7 @@ public class TimeLogAutoConfiguration {
         Object proceed = proceedingJoinPoint.proceed();
         long endTime = System.currentTimeMillis();
 
-        log.info("方法 {} 耗时 {} ms", name, endTime - startTime);
+        log.debug("方法 {} 耗时 {} ms", name, endTime - startTime);
         return proceed;
     }
 }

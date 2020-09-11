@@ -17,12 +17,14 @@
         <lombok.version>1.18.12</lombok.version>
         <mysql.version>5.1.45</mysql.version>
         <junit.version>4.12</junit.version>
+        <swagger.version>2.7.0</swagger.version>
 
     </properties>  <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
     <modules>
 
         <module>snowflake_algorithm</module>
         <module>logging-spring-boot-starter</module>
+        <module>spring-boot-quartz</module>
     </modules>
 
     <dependencyManagement>
@@ -49,6 +51,17 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

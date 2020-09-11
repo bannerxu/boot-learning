@@ -1,0 +1,50 @@
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring-boot-quartz?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2b8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  # 数据源配置
+  quartz:
+    #相关属性配置
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: clusteredScheduler
+            instanceId: AUTO
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: qrtz_
+            isClustered: true
+            clusterCheckinInterval: 10000
+            useProperties: false
+            misfireThreshold: 12000
+          #线程池配置
+          threadPool:
+            #实现的类名
+            class: org.quartz.simpl.SimpleThreadPool
+            #线程数量
+            threadCount: 3
+            #线程优先级
+            threadPriority: 5
+            #自创建父线程
+            threadsInheritContextClassLoaderOfInitializingThread: true
+    #数据库方式
+    job-store-type: jdbc
+
+server:
+  port: 8081
