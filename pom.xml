@@ -25,6 +25,7 @@
         <module>snowflake_algorithm</module>
         <module>logging-spring-boot-starter</module>
         <module>spring-boot-quartz</module>
+        <module>spring-boot-rest-template</module>
     </modules>
 
     <dependencyManagement>
