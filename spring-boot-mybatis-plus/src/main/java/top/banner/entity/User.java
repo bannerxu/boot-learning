@@ -1,9 +1,6 @@
 package top.banner.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -12,7 +9,7 @@ import java.time.LocalDateTime;
 @TableName("user")
 public class User {
 
-    @TableId(type = IdType.AUTO)
+    @TableId
     private Long id;
 
     /**
@@ -32,14 +29,35 @@ public class User {
     private String email;
 
     /**
-     * 上级id
+     * 直属上级id
      */
     private Long managerId;
 
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
+
+    /**
+     * 修改时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
+
+    /**
+     * 版本
+     * 仅支持 updateById(id) 与 update(entity, wrapper) 方法
+     */
+    @Version
+    private Integer version;
+
+    /**
+     * 逻辑删除标识(0.未删除,1.已删除)
+     */
+    @TableLogic
+    @TableField(select = false) //查询的时候不显示该字段
+    private Integer deleted;
 
 
     /**
