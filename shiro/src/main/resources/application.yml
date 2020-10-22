@@ -1,0 +1,42 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+    #    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/initSpringBoot?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+
+    tomcat:
+      test-while-idle: true
+      max-active: 3
+      initial-size: 1
+
+
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6379
+    database: 15
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+
+  messages.basename: messages
+  jackson:
+    default-property-inclusion: always
+
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  main:
+    allow-bean-definition-overriding: true

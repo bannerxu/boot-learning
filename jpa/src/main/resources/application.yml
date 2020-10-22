@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/jpa-test?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2b8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
