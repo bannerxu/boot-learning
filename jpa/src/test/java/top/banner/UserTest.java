@@ -1,7 +1,7 @@
 package top.banner;
 
 import org.junit.Test;
-import top.banner.service.UserService;
+import top.banner.repository.UserRepository;
 
 import javax.annotation.Resource;
 
@@ -10,15 +10,15 @@ import javax.annotation.Resource;
  */
 public class UserTest extends BaseTest {
     @Resource
-    private UserService userService;
+    private UserRepository userRepository;
 
     @Test
     public void all() {
-        userService.all().forEach(System.out::println);
+        userRepository.findAll().forEach(System.out::println);
     }
 
     @Test
     public void customSQL() {
-        userService.groupBy().forEach(System.out::println);
+        userRepository.groupBy().forEach(System.out::println);
     }
 }

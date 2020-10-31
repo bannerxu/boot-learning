@@ -23,7 +23,7 @@ spring:
     password:
     port: 6379
     database: 15
-    jedis:
+    lettuce:
       pool:
         max-active: 8
         min-idle: 0

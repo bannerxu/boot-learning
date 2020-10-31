@@ -38,6 +38,7 @@
         <module>jpa</module>
         <module>shiro</module>
         <module>spring-security</module>
+        <module>spring-cache</module>
     </modules>
 
     <dependencyManagement>
@@ -98,6 +99,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
     </dependencies>

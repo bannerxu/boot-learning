@@ -8,7 +8,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/spring-security?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/spring-cache?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: root
 
@@ -22,8 +22,12 @@ spring:
     host: 127.0.0.1
     password:
     port: 6379
-    database: 15
+    database: 1
     lettuce:
       pool:
         max-active: 8
         min-idle: 0
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
