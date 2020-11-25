@@ -1,11 +1,12 @@
 package top.banner.cache.controller;
 
 import org.springframework.web.bind.annotation.*;
+import top.banner.cache.entity.User;
 import top.banner.cache.service.UserService;
-import top.banner.entity.User;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 
 /**
  * @author XGL

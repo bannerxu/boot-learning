@@ -6,8 +6,8 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import top.banner.entity.User;
-import top.banner.repository.UserRepository;
+import top.banner.cache.entity.User;
+import top.banner.cache.repository.UserRepository;
 
 import javax.annotation.Resource;
 import java.util.List;
