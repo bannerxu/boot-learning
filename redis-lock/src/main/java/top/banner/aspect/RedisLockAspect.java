@@ -40,8 +40,9 @@ public class RedisLockAspect {
 
         Object result;
         try {
+            System.out.println("---------------------");
 
-            TimeUnit.SECONDS.sleep(5);
+//            TimeUnit.SECONDS.sleep(5);
             //执行方法
             result = joinPoint.proceed();
 

@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring-security?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+
+    tomcat:
+      test-while-idle: true
+      max-active: 3
+      initial-size: 1
