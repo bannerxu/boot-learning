@@ -4,10 +4,9 @@ import org.junit.Test;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.test.annotation.Repeat;
 import top.banner.entity.User;
-import top.banner.repository.CommonSpecUtil;
 import top.banner.repository.UserRepository;
+import top.banner.utils.CommonSpecUtil;
 
 import javax.annotation.Resource;
 import javax.persistence.criteria.Expression;
@@ -57,14 +56,15 @@ public class UserTest extends BaseTest {
     }
 
     @Test
-    @Repeat(10)
+//    @Repeat(10)
     public void add() {
         long l = System.currentTimeMillis();
         Random random = new Random();
 
         List<User> list = new ArrayList<>();
-        for (int i = 0; i < 3000; i++) {
+        for (int i = 0; i < 30; i++) {
             User user = new User();
+            user.setGender(random.nextInt(2));
 
             int i1 = random.nextInt(23);
             int i2 = random.nextInt(23);

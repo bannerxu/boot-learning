@@ -1,4 +1,4 @@
-package top.banner.repository;
+package top.banner.utils;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;

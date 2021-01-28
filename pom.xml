@@ -42,6 +42,7 @@
         <module>spring-security</module>
         <module>spring-cache</module>
         <module>spring-data-mongo-demo</module>
+        <module>request2Curl</module>
     </modules>
 
     <dependencyManagement>

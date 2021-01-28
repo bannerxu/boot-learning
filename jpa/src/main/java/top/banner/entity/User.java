@@ -2,10 +2,12 @@ package top.banner.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -28,6 +30,8 @@ public class User implements Serializable {
     private Integer groupId;
 
     private Integer age;
+
+    private Integer gender;
 
     private Date updateTime;
 
